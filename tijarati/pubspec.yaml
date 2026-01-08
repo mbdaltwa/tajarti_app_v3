@@ -1,0 +1,33 @@
+name: tajarti_royal
+description: A new Flutter project.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  hive_flutter: ^1.1.0
+  pdf: ^3.10.4
+  printing: ^5.10.3
+  intl: ^0.18.0
+  url_launcher: ^6.1.14
+  file_picker: ^6.1.1
+  fl_chart: ^0.63.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  flutter_launcher_icons: ^0.13.1
+
+flutter:
+  uses-material-design: true
+
+flutter_launcher_icons:
+  android: "ic_launcher"
+  ios: true
+  image_path: "assets/icon.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
