@@ -21,17 +21,22 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.19.0' # أو أحدث نسخة مستقرة
+          flutter-version: '3.19.0'
           channel: 'stable'
 
+      # الخطوة المعدلة: الدخول لمجلد المشروع لجلب المكاتب
       - name: Get Dependencies
+        working-directory: ./tijarati
         run: flutter pub get
 
+      # الخطوة المعدلة: الدخول لمجلد المشروع لبناء التطبيق
       - name: Build APK
-        run: flutter build apk --release
+        working-directory: ./tijarati
+        run: flutter build apk --release --no-tree-shake-icons
 
+      # الخطوة المعدلة: تحديد مكان ملف APK الصحيح
       - name: Upload APK
         uses: actions/upload-artifact@v3
         with:
           name: tijarati-pro-apk
-          path: build/app/outputs/flutter-apk/app-release.apk
+          path: tijarati/build/app/outputs/flutter-apk/app-release.apk
